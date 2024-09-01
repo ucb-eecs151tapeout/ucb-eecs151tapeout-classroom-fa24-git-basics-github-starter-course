@@ -214,7 +214,7 @@ If you don't know what these commands do, check out Resources at the bottom of t
 
 **(4)** **Open a pull request to the main repository and submit a screenshot to the gradescope.**
 
-To do this, go to the repository main page on Github. You will see an note such as:
+To do this, go to the repository main page on Github. You will see a note such as:
 
 ``This branch is 1 commit ahead of, 1 commit behind ucb-eecs151tapeout/ucb-eecs151tapeout-fa24-git-basics:main.``
 

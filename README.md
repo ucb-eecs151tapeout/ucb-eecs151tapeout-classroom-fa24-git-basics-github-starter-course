@@ -214,6 +214,12 @@ If you don't know what these commands do, check out Resources at the bottom of t
 
 **(4)** **Open a pull request to the main repository and submit a screenshot to the gradescope.**
 
+To do this, go to the repository main page on Github. You will see an note such as:
+
+``This branch is 1 commit ahead of, 1 commit behind ucb-eecs151tapeout/ucb-eecs151tapeout-fa24-git-basics:main.``
+
+Click on ``Contribute`` and ``Open pull request.``
+
 (Watch for announcements in case we change how we want you to submit proof.)
 
 While this STUDENTS.md change is minor, in large projects, you are normally expected to submit a PR (pull request) to enable your collaborators to review your work before integrating it into the main branch.

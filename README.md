@@ -173,22 +173,48 @@ Let us know when the time comes if you have issues with this step.
 
 ### Add your name to STUDENTS.md
 
-**(1)** On your local device, clone this repository. Use the SSH string at the <> Code tab at the top.
+**(1)** On your local device, clone this repository.
 
-``git clone git@github.com:???????.git``
+``git clone [SSH Git string]``
+
+You will find your unique SSH string in the ``<> Code`` tab at the top.
+For example, it may look like:
+
+``git clone git@github.com:ucb-eecs151tapeout/ucb-eecs151tapeout-fa24-git-basics.git``
 
 **(2)** Go to the STUDENTS.md file and add your name.
 
+**(3)** Audit the changes.
+
+Run ``git status``.
+
+This command will show you the changes in the repository since last commit. 
+
+Make sure ``STUDENTS.md`` is listed as modified, and nothing else.
+
 **(3)** Push the changes to your fork.
 
-``git add -A``
-``git commit -m "This short message should explain what you changed.``
+``git add STUDENTS.md`` will ``stage`` the file for commit.
+
+(Note that while there's ways to stage all changed files at once, that is generally considered bad practice, for example due to the amount of large intermediary files VLSI flows generate. By accidentally commiting those files, you are polluting the repository and making your life much harder.. and Git potentially much slower. So don't do it! You may also want to read up on ``.gitignore`` files to make sure some file extensions get ignored by Git automatically.)
+
+Run ``git status`` again. ``STUDENTS.md`` should now change from red to green.
+
+To create a commit (you can think of it as a checkpoint), run:
+
+``git commit -m "This short message should explain what you changed."``
+
+And to push to the remote repository:
+
 ``git push``
 
 If you don't know what these commands do, check out Resources at the bottom of this README.
 
-**(4)** Open a pull request to the main repository and submit a screenshot to the gradescope.*
-* Watch for announcements in case we change how we want you to submit proof.
+![Git Flow Example](https://i.sstatic.net/zLTpo.png)
+
+**(4)** Open a pull request to the main repository and submit a screenshot to the gradescope.
+
+(Watch for announcements in case we change how we want you to submit proof.)
 
 While this STUDENTS.md change is minor, in large projects, you are normally expected to submit a PR (pull request) to enable your collaborators to review your work before integrating it into the main branch.
 That is the practice we adopt in the EECS151T Tapeout. 

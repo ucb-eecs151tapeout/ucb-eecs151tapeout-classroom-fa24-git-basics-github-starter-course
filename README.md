@@ -105,9 +105,9 @@ Please add your SSH key to your Github account to simplify logging in. Later you
 
 You can generate a new SSH key on your local machine. After you generate the key, you can add the public key to your account on your GitHub instance to enable authentication for Git operations over SSH.
 
-(1) Open Terminal.
+**(1)** Open Terminal.
 
-(2) Paste the text below, replacing the email used in the example with your GitHub Enterprise Server email address.
+**(2)** Paste the text below, replacing the email used in the example with your GitHub Enterprise Server email address.
 
 ``ssh-keygen -t ed25519 -C "your_email@example.com"``
 
@@ -117,11 +117,12 @@ Note: If you are using a legacy system that doesn't support the Ed25519 algorith
 This creates a new SSH key, using the provided email as a label.
 
 > Generating public/private ALGORITHM key pair.
+
 When you're prompted to "Enter a file in which to save the key", you can press Enter to accept the default file location. Please note that if you created SSH keys previously, ssh-keygen may ask you to rewrite another key, in which case we recommend creating a custom-named SSH key. To do so, type the default file location and replace id_ALGORITHM with your custom key name.
 
 > Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM): [Press enter]
 
-(3) At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases."
+**(3)** At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases."
 
 > Enter passphrase (empty for no passphrase): [Type a passphrase]
 > Enter same passphrase again: [Type passphrase again]
@@ -129,7 +130,7 @@ When you're prompted to "Enter a file in which to save the key", you can press E
 #### Adding a new SSH key to your GitHub account
 (Copied from [Github docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).)
 
-(1) Copy the SSH public key to your clipboard.
+**(1)** Copy the SSH public key to your clipboard.
 
 If your SSH public key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.
 
@@ -140,31 +141,45 @@ $ pbcopy < ~/.ssh/id_ed25519.pub
 
 Tip: If pbcopy isn't working, you can locate the hidden .ssh folder, open the file in your favorite text editor, and copy it to your clipboard.
 
-(2) In the upper-right corner of any page on GitHub, click your profile photo, then click Settings.
+**(2)** In the upper-right corner of any page on GitHub, click your profile photo, then click Settings.
 
-(3) In the "Access" section of the sidebar, click  SSH and GPG keys.
+**(3)** In the "Access" section of the sidebar, click  SSH and GPG keys.
 
-(4) Click New SSH key or Add SSH key.
+**(4)** Click New SSH key or Add SSH key.
 
-(5) In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal laptop, you might call this key "Personal laptop".
+**(5)** In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal laptop, you might call this key "Personal laptop".
 
-(6) Select the type of key, either authentication or signing. For more information about commit signing, see "About commit signature verification."
+**(6)** Select the type of key, either authentication or signing. For more information about commit signing, see "About commit signature verification."
 
-(7) In the "Key" field, paste your public key.
+**(7)** In the "Key" field, paste your public key.
 
-(8) Click Add SSH key.
+**(8)** Click Add SSH key.
 
-(9) If prompted, confirm access to your account on GitHub. For more information, see "Sudo mode."
+**(9)** If prompted, confirm access to your account on GitHub. For more information, see "Sudo mode."
+
+#### Copying your new SSH key to your instructional account
+
+The Chipyard SoC repository, and more importantly - the VLSI flow and VLSI output files - are too large and compute intensive to run efficiently on most local machines.
+As such, you will be provided with an instructional account on a separate machine you will SSH into for most of this class.
+To use your SSH key on that machine, you can use a command like:
+
+``ssh-copy-id your_username@instructional_machine``
+or
+``ssh-copy-id -i [identity_file] your_username@instructional_machine``
+
+where [identity_file] is something like ``~/.ssh/id_rsa.pub``.
+
+Let us know when the time comes if you have issues with this step.
 
 ### Add your name to STUDENTS.md
 
-(1) On your local device, clone this repository. Use the SSH string at the <> Code tab at the top.
+**(1)** On your local device, clone this repository. Use the SSH string at the <> Code tab at the top.
 
 ``git clone git@github.com:???????.git``
 
-(2) Go to the STUDENTS.md file and add your name.
+**(2)** Go to the STUDENTS.md file and add your name.
 
-(3) Push the changes to your fork.
+**(3)** Push the changes to your fork.
 
 ``git add -A``
 ``git commit -m "This short message should explain what you changed.``
@@ -172,13 +187,13 @@ Tip: If pbcopy isn't working, you can locate the hidden .ssh folder, open the fi
 
 If you don't know what these commands do, check out Resources at the bottom of this README.
 
-(4) Open a pull request to the main repository and submit a screenshot to the gradescope.*
+**(4)** Open a pull request to the main repository and submit a screenshot to the gradescope.*
 * Watch for announcements in case we change how we want you to submit proof.
 
 While this STUDENTS.md change is minor, in large projects, you are normally expected to submit a PR (pull request) to enable your collaborators to review your work before integrating it into the main branch.
 That is the practice we adopt in the EECS151T Tapeout. 
 
-(5) You're done with the Prelab! You can move on the main parts of Lab 1.
+**(5)** You're done with the Prelab! You can move on the main parts of Lab 1.
 
 ### Optional
 

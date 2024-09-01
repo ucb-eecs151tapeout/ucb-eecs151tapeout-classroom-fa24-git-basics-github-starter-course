@@ -105,9 +105,9 @@ Please add your SSH key to your Github account to simplify logging in. Later you
 
 You can generate a new SSH key on your local machine. After you generate the key, you can add the public key to your account on your GitHub instance to enable authentication for Git operations over SSH.
 
-**(1)** Open Terminal.
+**(1)** **Open Terminal.**
 
-**(2)** Paste the text below, replacing the email used in the example with your GitHub Enterprise Server email address.
+**(2)** **Paste the text below, replacing the email used in the example with your GitHub Enterprise Server email address.**
 
 ``ssh-keygen -t ed25519 -C "your_email@example.com"``
 
@@ -122,7 +122,7 @@ When you're prompted to "Enter a file in which to save the key", you can press E
 
 > Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM): [Press enter]
 
-**(3)** At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases."
+**(3)** **At the prompt, type a secure passphrase.** For more information, see "Working with SSH key passphrases."
 
 > Enter passphrase (empty for no passphrase): [Type a passphrase]
 > Enter same passphrase again: [Type passphrase again]
@@ -130,7 +130,7 @@ When you're prompted to "Enter a file in which to save the key", you can press E
 #### Adding a new SSH key to your GitHub account
 (Copied from [Github docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).)
 
-**(1)** Copy the SSH public key to your clipboard.
+**(1)** **Copy the SSH public key to your clipboard.**
 
 If your SSH public key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.
 
@@ -141,21 +141,21 @@ $ pbcopy < ~/.ssh/id_ed25519.pub
 
 Tip: If pbcopy isn't working, you can locate the hidden .ssh folder, open the file in your favorite text editor, and copy it to your clipboard.
 
-**(2)** In the upper-right corner of any page on GitHub, click your profile photo, then click Settings.
+**(2)** **In the upper-right corner of any page on GitHub, click your profile photo, then click Settings.**
 
-**(3)** In the "Access" section of the sidebar, click  SSH and GPG keys.
+**(3)** **In the "Access" section of the sidebar, click  SSH and GPG keys.**
 
-**(4)** Click New SSH key or Add SSH key.
+**(4)** **Click New SSH key or Add SSH key.**
 
-**(5)** In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal laptop, you might call this key "Personal laptop".
+**(5)** **In the "Title" field, add a descriptive label for the new key.** For example, if you're using a personal laptop, you might call this key "Personal laptop".
 
-**(6)** Select the type of key, either authentication or signing. For more information about commit signing, see "About commit signature verification."
+**(6)** **Select the type of key, either authentication or signing.** For more information about commit signing, see "About commit signature verification."
 
-**(7)** In the "Key" field, paste your public key.
+**(7)** **In the "Key" field, paste your public key.**
 
-**(8)** Click Add SSH key.
+**(8)** **Click Add SSH key.**
 
-**(9)** If prompted, confirm access to your account on GitHub. For more information, see "Sudo mode."
+**(9)** **If prompted, confirm access to your account on GitHub.** For more information, see "Sudo mode."
 
 #### Copying your new SSH key to your instructional account
 
@@ -173,7 +173,7 @@ Let us know when the time comes if you have issues with this step.
 
 ### Add your name to STUDENTS.md
 
-**(1)** On your local device, clone this repository.
+**(1)** **On your local device, clone this repository.**
 
 ``git clone [SSH Git string]``
 
@@ -182,9 +182,9 @@ For example, it may look like:
 
 ``git clone git@github.com:ucb-eecs151tapeout/ucb-eecs151tapeout-fa24-git-basics.git``
 
-**(2)** Go to the STUDENTS.md file and add your name.
+**(2)** **Go to the STUDENTS.md file and add your name.**
 
-**(3)** Audit the changes.
+**(3)** **Audit the changes.**
 
 Run ``git status``.
 
@@ -192,7 +192,7 @@ This command will show you the changes in the repository since last commit.
 
 Make sure ``STUDENTS.md`` is listed as modified, and nothing else.
 
-**(3)** Push the changes to your fork.
+**(3)** **Push the changes to your fork.**
 
 ``git add STUDENTS.md`` will ``stage`` the file for commit.
 
@@ -212,14 +212,14 @@ If you don't know what these commands do, check out Resources at the bottom of t
 
 ![Git Flow Example](https://i.sstatic.net/zLTpo.png)
 
-**(4)** Open a pull request to the main repository and submit a screenshot to the gradescope.
+**(4)** **Open a pull request to the main repository and submit a screenshot to the gradescope.**
 
 (Watch for announcements in case we change how we want you to submit proof.)
 
 While this STUDENTS.md change is minor, in large projects, you are normally expected to submit a PR (pull request) to enable your collaborators to review your work before integrating it into the main branch.
 That is the practice we adopt in the EECS151T Tapeout. 
 
-**(5)** You're done with the Prelab! You can move on the main parts of Lab 1.
+**(5)** **You're done with the Prelab! You can move on the main parts of Lab 1.**
 
 ### Optional
 

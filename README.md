@@ -1,8 +1,9 @@
-# :wave: The Basics of GitHub 
+# EECS151T Tapeout (Pre)Lab 1: :wave: The Basics of GitHub 
 
-## 🤓 Course overview and learning outcomes 
+## 🤓 Assignment overview and learning outcomes 
 
-The goal of this course is to give you a brief introduction to GitHub. We’ll also provide you with materials for further learning and a few ideas to get you started on our platform. 🚀
+Tapeout projects sometimes run into mishaps when students new to Git force push to main without review or overwrite someone else's work.
+This assignment (heavily based on Github's intro course) ensures we all have a common Git foundation.
 
 ## :octocat: Git and GitHub
 
@@ -88,13 +89,103 @@ GitHub Explore is a great place to do just that … explore :smile: You can find
 
 You can check out the GitHub Explore website [at github.com/explore](https://github.com/explore). The more you interact with GitHub the more tailored your Explore view will be. 
 
-## 📝 Optional next steps 
+## 📝 The assignment deliverables
 
-* Open a pull request and let your teacher know that you’ve finished this course.  
-* Create a new markdown file in this repository. Let them know what you learned and what you are still confused about! Experiment with different styles!
-* Create your profile README. Let the world know a little bit more about you! What are you interested in learning? What are you working on? What's your favorite hobby? Learn more about creating your profile README in the document, ["Managing Your Profile README"](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme).
+When you accepted the invite to this assignment, Github automatically made a **fork** of the main ``ucb-eecs151tapeout-fa24-git-basics`` repository. 
+* When working on the tapeout, your Chipyard (we'll explain later) repository will also be a **fork** of the main respository until integration.
+
+To complete this assignment please complete the following:
+
+### SSH Setup 
+
+Please add your SSH key to your Github account to simplify logging in. Later you can copy this key to the instructional machine. If you've never done this before, the steps are:
+
+#### Generating a new SSH key
+(Copied from [Github docs](https://docs.github.com/en/enterprise-server@3.12/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).)
+
+You can generate a new SSH key on your local machine. After you generate the key, you can add the public key to your account on your GitHub instance to enable authentication for Git operations over SSH.
+
+(1) Open Terminal.
+
+(2) Paste the text below, replacing the email used in the example with your GitHub Enterprise Server email address.
+
+``ssh-keygen -t ed25519 -C "your_email@example.com"``
+
+Note: If you are using a legacy system that doesn't support the Ed25519 algorithm, use:
+``ssh-keygen -t rsa -b 4096 -C "your_email@example.com"``
+
+This creates a new SSH key, using the provided email as a label.
+
+> Generating public/private ALGORITHM key pair.
+When you're prompted to "Enter a file in which to save the key", you can press Enter to accept the default file location. Please note that if you created SSH keys previously, ssh-keygen may ask you to rewrite another key, in which case we recommend creating a custom-named SSH key. To do so, type the default file location and replace id_ALGORITHM with your custom key name.
+
+> Enter a file in which to save the key (/Users/YOU/.ssh/id_ALGORITHM): [Press enter]
+
+(3) At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases."
+
+> Enter passphrase (empty for no passphrase): [Type a passphrase]
+> Enter same passphrase again: [Type passphrase again]
+
+#### Adding a new SSH key to your GitHub account
+(Copied from [Github docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).)
+
+(1) Copy the SSH public key to your clipboard.
+
+If your SSH public key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.
+
+````
+$ pbcopy < ~/.ssh/id_ed25519.pub
+# Copies the contents of the id_ed25519.pub file to your clipboard
+````
+
+Tip: If pbcopy isn't working, you can locate the hidden .ssh folder, open the file in your favorite text editor, and copy it to your clipboard.
+
+(2) In the upper-right corner of any page on GitHub, click your profile photo, then click Settings.
+
+(3) In the "Access" section of the sidebar, click  SSH and GPG keys.
+
+(4) Click New SSH key or Add SSH key.
+
+(5) In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal laptop, you might call this key "Personal laptop".
+
+(6) Select the type of key, either authentication or signing. For more information about commit signing, see "About commit signature verification."
+
+(7) In the "Key" field, paste your public key.
+
+(8) Click Add SSH key.
+
+(9) If prompted, confirm access to your account on GitHub. For more information, see "Sudo mode."
+
+### Add your name to STUDENTS.md
+
+(1) On your local device, clone this repository. Use the SSH string at the <> Code tab at the top.
+
+``git clone git@github.com:???????.git``
+
+(2) Go to the STUDENTS.md file and add your name.
+
+(3) Push the changes to your fork.
+
+``git add -A``
+``git commit -m "This short message should explain what you changed.``
+``git push``
+
+If you don't know what these commands do, check out Resources at the bottom of this README.
+
+(4) Open a pull request to the main repository and submit a screenshot to the gradescope.*
+* Watch for announcements in case we change how we want you to submit proof.
+
+While this STUDENTS.md change is minor, in large projects, you are normally expected to submit a PR (pull request) to enable your collaborators to review your work before integrating it into the main branch.
+That is the practice we adopt in the EECS151T Tapeout. 
+
+(5) You're done with the Prelab! You can move on the main parts of Lab 1.
+
+### Optional
+
+If you want more Github practice..
+
 * Go to your user dashboard and create a new repository. Experiment with the features within that repository to familiarize yourself with them. 
-* [Let us know what you liked or didn’t like about the content of this course](https://support.github.com/contact/education). What would you like to see more of? What would be interesting or helpful to your learning journey? 
+* Create your profile README. Let the world know a little bit more about you! What are you interested in learning? What are you working on? What's your favorite hobby? Learn more about creating your profile README in the document, ["Managing Your Profile README"](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme).
 
 ## 📚  Resources 
 * [A short video explaining what GitHub is](https://www.youtube.com/watch?v=w3jLJU7DT5E&feature=youtu.be) 

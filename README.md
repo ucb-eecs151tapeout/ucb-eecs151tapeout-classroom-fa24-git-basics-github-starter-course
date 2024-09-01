@@ -204,7 +204,7 @@ To create a commit (you can think of it as a checkpoint), run:
 
 ``git commit -m "This short message should explain what you changed."``
 
-And to push to the remote repository:
+If it asks you to set your name and email, follow the prompt. And then to push to the remote repository:
 
 ``git push``
 
